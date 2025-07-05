@@ -1,0 +1,56 @@
+/* Styles for Tips Banner */
+.tips-banner {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  margin-top: 20%;
+}
+
+.tips-slider {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.tips-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 40px; /* Space between the columns */
+  width: 100%; /* Occupy the full width of the parent container */
+  max-width: 1200px; /* Limit the maximum width */
+}
+
+.tip-category {
+  background-color: #edf2fb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tip-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tip-box {
+  background-color: #ff0a54;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tips-row {
+    grid-template-columns: 1fr; /* One column on smaller screens */
+    gap: 20px;
+  }
+}

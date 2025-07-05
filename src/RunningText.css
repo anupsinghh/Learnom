@@ -1,0 +1,29 @@
+/* Styles for Static Text Banner */
+.running-text {
+    width: 100%;
+    background-color: #000; /* Black background */
+    padding: 10px 0;
+    text-align: center; /* Center align text */
+    color: #fff; /* White text color */
+    font-size: 1.2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make text bold */
+    position: fixed;
+    top: 50px; /* Adjust based on your navbar height */
+    left: 0;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .running-text {
+      font-size: 1rem; /* Smaller font size for tablets and smaller devices */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .running-text {
+      font-size: 0.9rem; /* Even smaller font size for mobile devices */
+      padding: 8px 0; /* Adjust padding for smaller screens */
+    }
+  }
+  

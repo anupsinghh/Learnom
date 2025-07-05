@@ -1,0 +1,491 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e2eafc;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Default navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links .loginb {
+  background-color: #007bff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: #e2eafc;
+}
+
+.logout-button {
+  background-color: red;
+  padding: 0.5rem;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .navbar.open .nav-links {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.loginb {
+  background-color: #70e000;
+  border: none;
+  padding: 10px 20px; /* Adjusted padding for smaller screens */
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: black;
+  margin-left: auto;
+}
+
+.loginb:hover {
+  background-color: #ffd100;
+  
+}
+
+.navbar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.ease {
+  font-size: 28px; /* Adjusted for smaller screens */
+  align-items: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+.ease::before {
+  content: "\f02d";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 28px; /* Adjusted for smaller screens */
+}
+
+.navbar a:hover {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+
+}
+
+.user-name {
+  color: #ff477e;
+  font-size: 18px;
+  margin: auto;
+}
+
+.logout-button {
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.logout-button:hover {
+  background-color: #ba181b;
+}
+
+.App-main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 60px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.App-main h1 {
+  margin-bottom: 10px;
+  margin-top: 10%;
+  font-size: 2.5rem;
+  text-align: center; /* Adjusted font size */
+}
+
+.semester-dropdown {
+
+}
+
+.semester-dropdown select {
+  padding: 15px;
+  font-size: 1.2rem; /* Adjusted font size */
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 600px;
+}
+
+/* Style for vertical subjects display */
+.subject-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.subject-button {
+  background-color: #ff0a54;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 8px 200px;
+  font-size: 1.4rem; /* Adjusted font size */
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.subject-button.active {
+  background-color: black;
+  color: white;
+}
+
+.subject-button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/* Style for horizontal subjects display */
+.subjects-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subject-list-horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+/* Style for content options display */
+.content-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.content-option-button {
+  background-color: #ff0a54;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem; /* Adjusted font size */
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  margin: 5px;
+  width: 100%;
+}
+
+.content-option-button.active {
+  background-color: black;
+  color: white;
+}
+
+.content-option-button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/* Styles for content data display */
+.content-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.content-data {
+  text-align: center;
+}
+
+.content-data h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.content-data ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content-data li {
+  margin-bottom: 5px;
+}
+
+.content-data a {
+  color: black;
+  text-decoration: none;
+}
+
+.content-data a:hover {
+  text-decoration: underline;
+}
+
+/* .App-footer {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 14px; 
+  text-align: center;
+  padding: 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+} */
+/* src/App.css */
+/* src/App.css */
+
+/* src/App.css */
+
+/* src/App.css */
+
+.App-footer {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 14px; /* Adjusted font size */
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center all content */
+  align-items: center; /* Vertically align items */
+  gap: 0px; /* Space between text and icons */
+}
+
+.footer-text {
+  margin: 0;
+  font-size: 15px; /* Adjust as needed */
+}
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social-icons a {
+  margin: 0 7px;
+  color: #0077b5; /* Default color for icons */
+  text-decoration: none;
+}
+
+.footer-social-icons i {
+  font-size: 20px; /* Adjust the size as needed */
+}
+
+.footer-social-icons a:hover i {
+  color: #0077b5; /* LinkedIn color */
+}
+
+.footer-social-icons a[href*="instagram"] i {
+  color: #e4405f; /* Instagram color */
+}
+
+/* Spinner styles */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  position: fixed; /* Make it stay on the center even if content is loaded behind */
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9); /* Optional: Light overlay */
+  z-index: 9999; /* Ensure it's on top */
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #ff0a54;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive spinner size */
+@media (max-width: 768px) {
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 5px;
+  }
+}
+
+
+
+
+/* Styles for responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .loginb {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .App-main {
+    padding: 10px;
+    margin-top: 80px; /* Adjust margin for smaller screens */
+  }
+
+  .semester-dropdown select {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .subject-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .content-option-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .content-data h2 {
+    font-size: 1.1rem;
+  }
+
+  .App-footer {
+    font-size: 12px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ease {
+    font-size: 20px;
+  }
+
+  .ease::before {
+    font-size: 20px;
+  }
+
+  .loginb {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .subject-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .content-option-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .content-data h2 {
+    font-size: 1rem;
+  }
+}

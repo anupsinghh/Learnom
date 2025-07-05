@@ -1,0 +1,56 @@
+/* src/ContactPage.css */
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #e2eafc;
+    min-height: 80vh;
+  }
+  
+  .contact-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    text-align: center;
+    margin: 0px;
+
+  }
+  
+  .contact-container h1 {
+    font-size: 2rem;
+    margin: 0px;
+    
+  }
+  
+  .contact-container p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-info a {
+    color: #ff0a54;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .social-icons a {
+    margin: 0 15px;
+    color: #ff0a54;
+  }
+  
+  .social-icons a:hover {
+    color: #000000; /* LinkedIn color */
+  }
+  

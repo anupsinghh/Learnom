@@ -1,0 +1,100 @@
+/* Styles for Recommended Channels Section */
+.recommended-channels {
+  width: 100%; /* Full width of the website */
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommended-channels h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.recommended-channels-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Five columns */
+  gap: 20px;
+  width: 100%; /* Ensures the grid takes up the full width of the container */
+}
+
+.subject-section {
+  margin-bottom: 20px;
+}
+
+.subject-section h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.channel-box {
+  background-color: #ff0a54;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer; /* Makes the whole box clickable */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.channel-box:hover {
+  background-color: #000000;
+  transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.channel-box a {
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block; /* Ensures the anchor covers the entire box */
+  width: 100%;
+  height: 100%;
+}
+
+.channel-box a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.channel-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .recommended-channels-content {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .recommended-channels-content {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .recommended-channels-content {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on very small screens */
+  }
+
+  .channel-box a {
+    font-size: 1rem;
+  }
+}

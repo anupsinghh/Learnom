@@ -1,0 +1,81 @@
+.roadmap-container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
+    margin-top: 5%;
+  }
+  
+  .roadmap-container h1 {
+    font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+  margin-top: 0px;
+  }
+  
+  .profession-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .profession-box {
+    background-color: #ff0a54;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .profession-box:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+  }
+  
+  .profession-box h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .steps-container {
+    background-color: #edf2fb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .steps-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .steps-container ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .steps-container ul li {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  @media (max-width: 1024px) {
+    .profession-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .profession-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
