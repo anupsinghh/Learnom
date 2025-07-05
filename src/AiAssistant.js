@@ -20,7 +20,7 @@ const AiAssistant = () => {
 
     try {
       // Send the file to the backend for processing
-      const response = await axios.post("http://localhost:5000/upload", formData, {
+      const response = await axios.post("https://learnom.onrender.com/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
